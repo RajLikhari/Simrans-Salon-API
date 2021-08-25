@@ -27,9 +27,12 @@ app.post('/createAppointment', (req, res) => {
     mailer.sendCreatedAppointmentMail(newClient)
 })
 
-//GET for handling canceling appointments
+//GET for handling canceling appointments, need to grab information from the mongoDb server with that password first
 app.get('/cancelAppointment', (req, res) => {
-    res.render('delApp')
+    res.render('delApp', {
+        HELLO: "hello"
+    })
+       
 })
 
 
