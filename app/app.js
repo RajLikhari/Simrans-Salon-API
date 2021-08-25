@@ -1,8 +1,9 @@
 const express = require('express')
 var bodyParser = require('body-parser')
-const MailService = require('../controller/mailService.js')
-const Client = require('../models/client.js')
+const MailService = require('./controller/mailService.js')
+const Client = require('./models/client.js')
 const path = require('path');
+var exphbs  = require('express-handlebars');
 
 
 
@@ -11,8 +12,10 @@ const app = express()
 const port = 3000
 app.use(bodyParser.json())
 const mailer = new MailService() //This is for send emails
+app.engine('hbs', exphbs({defaultLayout: 'main', extname: '.hbs'}));
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'static')))
-
 
 
 //Handling all routes
@@ -26,7 +29,7 @@ app.post('/createAppointment', (req, res) => {
 
 //GET for handling canceling appointments
 app.get('/cancelAppointment', (req, res) => {
-    res.sendFile(__dirname + '/static/delApp.html')
+    res.render('delApp')
 })
 
 
