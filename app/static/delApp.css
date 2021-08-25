@@ -1,0 +1,33 @@
+.total-flex{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("background.jpg");
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    filter: blur(8px);
+
+    
+}
+
+.main-body{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 450px;
+    height: 500px;
+    padding: 20px;
+    text-align: center;
+
+    background-color: #f5eceb;
+    filter: drop-shadow(1px 1px 5px black);
+
+}
+
+body {    
+    margin: 0 !important;
+    padding: 0 !important;
+}
