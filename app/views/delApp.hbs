@@ -9,18 +9,26 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div class="total-flex"></div>
-    <div class="main-body" id="main-body">
-        <p>Appointment Cancellation</p>
-        <p>Hello {{ firstName}} {{ lastName }}, are you sure you want to cancel your appointment with Simran's Salon?</p>
-        <button id="test" onclick="hideFunction()">Confirm Cancel</button>
-    </div>
-
-    <div class="hidden-body" id="hidden-body">
-        <p>Your appointment has been cancelled, feel free to close this page</p>
+    <div class="total-flex">
+        <div class="main-content">
+            <div class="top-content">
+                <p id="simran-text">Simran's Salon</p>
+                <p id="header">Appointment Cancellation</p>
+            </div>
+            <div class="middle-content">
+                <p style="padding: 20px;">Hi {{firstName}} {{ lastName }}, <br> Are you sure you want to cancel your appointment on <b>{{ date }}?</b></p>
+            </div>
+            <div class="bottom-content">
+                <button>Confirm</button>
+            </div>
+        </div>
     </div>
 </body>
 </html>

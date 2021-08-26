@@ -19,7 +19,8 @@ module.exports = (req,res) => {
             } else {
                 res.render('delApp', {
                     firstName: result.firstName,
-                    lastName: result.lastName
+                    lastName: result.lastName,
+                    date: result.appointmentDate
                 })
             }
         }
