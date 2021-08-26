@@ -18,7 +18,14 @@ app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'static')))
 app.use(express.static(path.join(__dirname, 'images')))
 
-
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost:27017/simrans-salon', {useNewUrlParser: true, useUnifiedTopology: true});
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+    console.log("hello")
+  // we're connected!
+});
 
 //Handling all routes
 //POST for handling incoming appointments and sending the email for it
@@ -31,9 +38,18 @@ app.post('/createAppointment', (req, res) => {
 
 //GET for handling canceling appointments, need to grab information from the mongoDb server with that password first
 app.get('/cancelAppointment', (req, res) => {
-    res.render('delApp', {
-        HELLO: "hello"
-    })
+    id = req.query.id
+    pass = req.query.pass
+    if(id.localeCompare("raj") != 0 || pass.localeCompare("raj") != 0){
+        res.status(404).send("Forbidden")
+        console.log(id + " " + pass)
+    } else {
+        res.render('delApp', {
+            firstName: "Raj",
+            lastName: "Likhari"
+        })
+    }
+    
        
 })
 

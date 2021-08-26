@@ -10,10 +10,22 @@ class Client {
     serviceType = ''
     servicePrice = ''
     serviceTime = ''
+    uniqueId = ''
     passwordForCancel = ''
 
 
     constructor(firstName, lastName, email, phoneNumber, appointmentDate, serviceType, servicePrice, serviceTime){
+        
+        var id = generator.generate({
+            length: 10,
+            numbers: true
+        });
+
+        var password = generator.generate({
+            length: 10,
+            numbers: true
+        });
+
         this.firstName = firstName
         this.lastName = lastName
         this.email = email
@@ -22,13 +34,8 @@ class Client {
         this.serviceType = serviceType
         this.servicePrice = servicePrice
         this.serviceTime = serviceTime
-
-        var password = generator.generate({
-            length: 10,
-            numbers: true
-        });
-
         this.passwordForCancel = password
+        this.uniqueId = id
     }
 
 

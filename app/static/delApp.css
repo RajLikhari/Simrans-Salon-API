@@ -25,7 +25,59 @@
     background-color: #f5eceb;
     filter: drop-shadow(1px 1px 5px black);
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
 }
+
+
+.hidden-body{
+    visibility: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 450px;
+    height: 500px;
+    padding: 20px;
+    text-align: center;
+
+    background-color: #f5eceb;
+    filter: drop-shadow(1px 1px 5px black);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+
+}
+
+p{
+    font-family: 'Raleway', sans-serif;
+    color:black;
+    font-weight: 600;
+    font-size: 30px;
+}
+
+button{
+    font-family: 'Raleway', sans-serif;
+    color:black;
+    font-weight: 600;
+    font-size: 30px;
+    background-color: #ffffff00;
+    border: 1px black solid;
+    padding: 10px;
+
+}
+
+button:hover{
+    box-shadow: 1px 1px 1px black;
+}
+
 
 body {    
     margin: 0 !important;

@@ -6,11 +6,21 @@
 <head>
     <meta charset="utf-8">
     <title>Appointment Cancellation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div class="total-flex"></div>
-    <div class="main-body"></div>
-   
+    <div class="main-body" id="main-body">
+        <p>Appointment Cancellation</p>
+        <p>Hello {{ firstName}} {{ lastName }}, are you sure you want to cancel your appointment with Simran's Salon?</p>
+        <button id="test" onclick="hideFunction()">Confirm Cancel</button>
+    </div>
+
+    <div class="hidden-body" id="hidden-body">
+        <p>Your appointment has been cancelled, feel free to close this page</p>
+    </div>
 </body>
 </html>
