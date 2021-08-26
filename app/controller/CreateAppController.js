@@ -6,6 +6,7 @@ const GoogleMailer = new MailService() //This is for send emails
 
 
 module.exports = (req,res) => {
+    console.log("Got creation")
     const newClient = new Client(req.body.firstName, req.body.lastName, req.body.email, req.body.phoneNumber, req.body.appointmentDate, req.body.serviceType, req.body.servicePrice, req.body.serviceTime)
     saveBooking = MongoService.saveClientToDB(newClient);
     saveBooking.then(function(result) {

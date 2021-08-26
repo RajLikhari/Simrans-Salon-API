@@ -5,6 +5,7 @@ const DatabaseService = require('./DatabaseService');
 const MongoSerivce = new DatabaseService()
 
 module.exports = (req,res) => {
+    console.log("Got cancellation")
     clientId = req.query.id
     foundBooking = MongoSerivce.findClientInDB(clientId)
     foundBooking.then(function(result){

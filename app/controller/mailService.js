@@ -37,10 +37,10 @@ class MailService {
                 hbs({
                       viewEngine: {
                   extname: '.handlebars', // handlebars extension
-                  layoutsDir: 'emails', // location of handlebars templates
+                  layoutsDir: 'app/views/emails', // location of handlebars templates
                   defaultLayout: 'appointmentCreated', // name of main template
               },
-              viewPath: 'emails',
+              viewPath: 'app/views/emails',
               extName: '.handlebars',
                 })
             );
