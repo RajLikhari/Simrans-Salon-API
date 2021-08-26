@@ -36,7 +36,7 @@ app.post('/createAppointment', CreateAppController)
 app.get('/cancelAppointment', CancelAppController)
 
 //Listening for the server
-app.listen(3000, () => {
+app.listen(3001, () => {
     console.log(`app listening at http://localhost:3000`)
 })
 
