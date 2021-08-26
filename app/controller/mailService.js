@@ -15,6 +15,8 @@ OAuth2Client.setCredentials({ refresh_token: REFRESH_TOKEN});
 class MailService {
 
     async sendCreatedAppointmentMail(newClient) {
+        const link = "http://localhost:3000/cancelAppointment?id=" + newClient.uniqueId + "&pass=" + newClient.passwordForCancel
+
         try{
             const accessToken = await OAuth2Client.getAccessToken();
     
@@ -54,7 +56,9 @@ class MailService {
                     serviceType: newClient.serviceType,
                     servicePrice: newClient.servicePrice,
                     serviceTime: newClient.serviceTime,
-                    phoneNumber: newClient.phoneNumber
+                    phoneNumber: newClient.phoneNumber,
+                    linkToCancel: link
+
                 }
             };
     
