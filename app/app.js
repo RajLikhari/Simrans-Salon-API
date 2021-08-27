@@ -3,6 +3,7 @@ const MailService = require('./controller/MailService.js')
 const DatabaseService = require('./controller/DatabaseService.js')
 const CreateAppController = require('./controller/CreateAppController.js')
 const CancelAppController = require('./controller/CancelAppController.js')
+const DeleteAppController = require('./controller/DeleteAppController.js')
 
 
 //imports
@@ -34,6 +35,7 @@ const dbMongo = mongoose.connection;
 //Routes
 app.post('/createAppointment', CreateAppController)
 app.get('/cancelAppointment', CancelAppController)
+app.get('/deleteAppointment', DeleteAppController)
 
 //Listening for the server
 app.listen(3000, () => {

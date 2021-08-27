@@ -13,6 +13,30 @@
     
 }
 
+#error{
+    visibility: hidden;
+    text-align: center;
+
+    font-family: 'Raleway',sans-serif;
+    color: black;
+    font-size: 30px;
+    font-weight: 600;
+    transform: translateY(-450px);
+    padding: 20px;
+}
+
+#hidden{
+    visibility: hidden;
+    text-align: center;
+
+    font-family: 'Raleway',sans-serif;
+    color: black;
+    font-size: 30px;
+    font-weight: 600;
+    transform: translateY(-250px);
+    padding: 20px;
+}
+
 
 .total-flex{
     width: 100vw;

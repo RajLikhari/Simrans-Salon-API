@@ -23,10 +23,12 @@
                 <p id="header">Appointment Cancellation</p>
             </div>
             <div class="middle-content">
-                <p style="padding: 20px;">Hi {{firstName}} {{ lastName }}, <br> Are you sure you want to cancel your appointment on <b>{{ date }}?</b></p>
+                <p id="shown" style="padding: 20px;">Hi {{firstName}} {{ lastName }}, <br> Are you sure you want to cancel your appointment on <b>{{ date }}?</b></p>
+                <p id="hidden">Confirmed, please book with us again! <br> <br> Feel free to close this page</p>
+                <p id="error">An error occured, please try again later</p>
             </div>
             <div class="bottom-content">
-                <button>Confirm</button>
+                <button onclick="callApi()">Confirm</button>
             </div>
         </div>
     </div>

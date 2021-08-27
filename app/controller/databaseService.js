@@ -21,6 +21,16 @@ class DatabaseService{
         }
     }
 
+    async deleteInDB(uniqueIdIncoming){
+        try{
+            let deleteBooking = await BookingInfo.deleteOne({uniqueId: uniqueIdIncoming})
+            return deleteBooking
+
+        } catch(error){
+            throw error
+        }
+    }
+
 
 
 }
