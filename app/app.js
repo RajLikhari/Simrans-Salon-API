@@ -1,17 +1,20 @@
-//module exports
-const MailService = require('./controller/MailService.js')
-const DatabaseService = require('./controller/DatabaseService.js')
-const CreateAppController = require('./controller/CreateAppController.js')
-const CancelAppController = require('./controller/CancelAppController.js')
-const DeleteAppController = require('./controller/DeleteAppController.js')
-
-
 //imports
 const express = require('express')
 var bodyParser = require('body-parser')
 const path = require('path');
 var exphbs  = require('express-handlebars');
 const  mongoose  = require('mongoose')
+
+
+
+//module exports
+const MailService = require('./controller/MailService.js')
+const DatabaseService = require('./controller/DatabaseService.js')
+const CreateAppController = require('./controller/CreateAppController.js')
+const CancelAppController = require('./controller/CancelAppController.js')
+const DeleteAppController = require('./controller/DeleteAppController.js')
+const GrabTimeController = require('./controller/GrabTimeController.js')
+const SetAppTimeController = require('./controller/SetAppTimeController')
 
 
 //declarations
@@ -36,6 +39,8 @@ const dbMongo = mongoose.connection;
 app.post('/createAppointment', CreateAppController)
 app.get('/cancelAppointment', CancelAppController)
 app.get('/deleteAppointment', DeleteAppController)
+app.get('/setAppointmentTime', SetAppTimeController)
+app.get('/grabAppointmentTimes', GrabTimeController)
 
 //Listening for the server
 app.listen(3000, () => {

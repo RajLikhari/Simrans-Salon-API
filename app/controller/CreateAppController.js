@@ -14,7 +14,7 @@ module.exports = (req,res) => {
             res.status(400).send("Unable to save into the database")
         } else {
             GoogleMailer.sendCreatedAppointmentMail(newClient)
-            res.status(200).send("Created")
+            res.status(200).send()
         }
     })
 }

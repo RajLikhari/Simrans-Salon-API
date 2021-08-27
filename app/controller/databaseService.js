@@ -1,4 +1,5 @@
 const BookingInfo = require('../models/BookingInfoSchema.js')
+const AppointmentTime = require('../models/AppointmentTime')
 
 
 class DatabaseService{
@@ -21,6 +22,7 @@ class DatabaseService{
         }
     }
 
+
     async deleteInDB(uniqueIdIncoming){
         try{
             let deleteBooking = await BookingInfo.deleteOne({uniqueId: uniqueIdIncoming})
@@ -30,6 +32,16 @@ class DatabaseService{
             throw error
         }
     }
+
+    async saveTimeToDB(incomingTime){
+        try{
+            const saveTime = await AppointmentTime.create({time: incomingTime})
+            return saveTime
+        } catch(error){
+            throw error
+        }
+    }
+
 
 
 
