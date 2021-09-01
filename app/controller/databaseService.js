@@ -42,9 +42,9 @@ class DatabaseService{
         }
     }
 
-    async findTimeInDB(incomingTime){
+    async findTimeInDB(){
         try{
-            const findTime = await AppointmentTime.findOne({staticId: incomingTime})
+            const findTime = await AppointmentTime.findOne({staticId: "1"})
             return findTime
         } catch (error){
             throw error
