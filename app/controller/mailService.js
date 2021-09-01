@@ -6,7 +6,7 @@ const hbs = require('nodemailer-express-handlebars');
 const CLIENT_ID = '331517253694-jkvqlq5c7d2d3ckomfrvke8fn9il91h9.apps.googleusercontent.com'
 const CLIENT_SECRET = 'UianSomxRMCBQIviVAzMPohq'
 const REDIRECT_URI = 'https://developers.google.com/oauthplayground'
-const REFRESH_TOKEN = '1//04Zadt51AlPA-CgYIARAAGAQSNwF-L9Iri9lwy2DRjY3D6VYExxlxY6WVsdvGZ6DH7zI7RXTDGekgSD7fOpl0k8BNdwC7TwrAkHE'
+const REFRESH_TOKEN = '1//04QPXkGdlgCdMCgYIARAAGAQSNwF-L9Ir2z0ixTGCAsnMAXBqeakk47PHbbiYM66rM_iFeyDs5ekU95v-MuSlc2wDjrLyRpgf14s'
 
 const OAuth2Client = new google.auth.OAuth2(CLIENT_ID, CLIENT_SECRET, REDIRECT_URI)
 OAuth2Client.setCredentials({ refresh_token: REFRESH_TOKEN});

@@ -3,7 +3,8 @@ const Schema  = mongoose.Schema;
 
 
 const AppointmenTimeSchema = new Schema({
-    time: [String]
+    time: [String],
+    staticId: [String]
 
 },
 { collection: 'appointment-times' })

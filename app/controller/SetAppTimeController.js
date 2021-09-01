@@ -3,7 +3,15 @@ const MongoService = new DatabaseService()
 
 module.exports = (req,res) => {
     const toSplit = req.query.time
-    const result = toSplit.toString().split("/")
+    const timeValues = toSplit.toString().split("/")
+    //Need to find the ID first else create it, id stays static
+
     const promise = MongoService.saveTimeToDB(result)
+
+
+
+
+
+    
    
 }

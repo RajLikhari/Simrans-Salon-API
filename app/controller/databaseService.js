@@ -35,12 +35,30 @@ class DatabaseService{
 
     async saveTimeToDB(incomingTime){
         try{
-            const saveTime = await AppointmentTime.create({time: incomingTime})
+            const saveTime = await AppointmentTime.create({time: incomingTime, staticId: "1"})
             return saveTime
         } catch(error){
             throw error
         }
     }
+
+    async findTimeInDB(incomingTime){
+        try{
+            const findTime = await AppointmentTime.findOne({staticId: incomingTime})
+            return findTime
+        } catch (error){
+            throw error
+        }
+    }
+
+   async UpdateTimeInDB(incomingTime){
+       try{
+           const updateTime = await AppointmentTime.findOneAndUpdate({staticId: "1"}, {time: incomingTime})
+           return updateTime
+       } catch (error){
+           throw error
+       }
+   }
 
 
 
