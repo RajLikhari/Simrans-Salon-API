@@ -1,0 +1,28 @@
+.total-background{
+    width: 100vw;
+    height: 100vh;
+    background-image: url("background.jpg");
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+
+.top-flex{
+
+}
+
+.bottom-flex{
+    
+}
+
+
+
+
+
+
+body {    
+    margin: 0 !important;
+    padding: 0 !important;
+}
