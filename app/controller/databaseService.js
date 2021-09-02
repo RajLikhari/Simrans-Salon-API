@@ -33,12 +33,13 @@ class DatabaseService{
         }
     }
 
+
     async saveTimeToDB(incomingTime){
         try{
             const saveTime = await AppointmentTime.create({time: incomingTime, staticId: "1"})
             return saveTime
         } catch(error){
-            throw error
+            return "error"
         }
     }
 
@@ -47,7 +48,7 @@ class DatabaseService{
             const findTime = await AppointmentTime.findOne({staticId: "1"})
             return findTime
         } catch (error){
-            throw error
+            return "error"
         }
     }
 
@@ -56,7 +57,7 @@ class DatabaseService{
            const updateTime = await AppointmentTime.findOneAndUpdate({staticId: "1"}, {time: incomingTime})
            return updateTime
        } catch (error){
-           throw error
+           return "error"
        }
    }
 

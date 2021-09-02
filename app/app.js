@@ -14,7 +14,8 @@ const CreateAppController = require('./controller/CreateAppController.js')
 const CancelAppController = require('./controller/CancelAppController.js')
 const DeleteAppController = require('./controller/DeleteAppController.js')
 const GrabTimeController = require('./controller/GrabTimeController.js')
-const SetAppTimeController = require('./controller/SetAppTimeController')
+const SetAppTimeController = require('./controller/SetAppTimeController');
+const AdminController = require('./controller/AdminController.js');
 
 
 //declarations
@@ -40,7 +41,8 @@ app.post('/createAppointment', CreateAppController)
 app.get('/cancelAppointment', CancelAppController)
 app.get('/deleteAppointment', DeleteAppController)
 app.get('/setAppointmentTime', SetAppTimeController)
-app.get('/grabAppointmentTimes', GrabTimeController)
+app.get('/grabAppointmentTime', GrabTimeController)
+app.get('/admin', AdminController);
 
 //Listening for the server
 app.listen(3000, () => {

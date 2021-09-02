@@ -12,10 +12,10 @@ module.exports = (req,res) => {
             console.log("Unable to find time entry")
             const createTime = MongoService.saveTimeToDB(timeValues);
             createTime.then(function(result){
-                if(result instanceof error){
+                if(result == "error"){
                     res.status(400).send("error")
                 } else {
-                    res.status(200).send("Time set")
+                    res.status(200).send("Time set new")
                 }
             })
 
@@ -23,10 +23,10 @@ module.exports = (req,res) => {
             console.log("Found time entry");
             const updateTime = MongoService.UpdateTimeInDB(timeValues);
             updateTime.then(function(result){
-                if(result instanceof error){
+                if(result == "error"){
                     res.status(400).send("error")
                 } else {
-                    res.status(200).send("Time set")
+                    res.status(200).send("Time set update")
                 }
             })
         }
