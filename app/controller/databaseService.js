@@ -33,6 +33,17 @@ class DatabaseService{
         }
     }
 
+    async findDatesInDB(dateIncoming){
+        try{
+            let foundBooking = await BookingInfo.find({ appointmentDate: dateIncoming})
+            return foundBooking
+        } catch(error){
+            throw error
+        }
+    }
+
+    
+
 
     async saveTimeToDB(incomingTime){
         try{
